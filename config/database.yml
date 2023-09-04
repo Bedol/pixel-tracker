@@ -89,3 +89,4 @@ production:
   host: <%= ENV["PIXEL_TRACKER_DATABASE_HOST"] %>
   username: <%= ENV["PIXEL_TRACKER_DATABASE_USERNAME"] %>
   password: <%= ENV["PIXEL_TRACKER_DATABASE_PASSWORD"] %>
+  port: <%= ENV["PIXEL_TRACKER_DATABASE_PORT"] %>
