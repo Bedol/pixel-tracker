@@ -85,7 +85,7 @@ test:
 #
 production:
   <<: *default
-  database: pixel_tracker_production
+  database: <%= ENV["PIXEL_TRACKER_DATABASE"] %>
   host: <%= ENV["PIXEL_TRACKER_DATABASE_HOST"] %>
   username: <%= ENV["PIXEL_TRACKER_DATABASE_USERNAME"] %>
   password: <%= ENV["PIXEL_TRACKER_DATABASE_PASSWORD"] %>
