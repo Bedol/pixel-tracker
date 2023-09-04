@@ -15,7 +15,7 @@ class LinksController < ApplicationController
   end
 
   def create
-    owner_code = ENV.fetch('OWNER_CODE', 'test')
+    owner_code = ENV.fetch('CODE_OWNER', 'test')
     code = SecureRandom.hex(8)
     @link = Link.new(owner_code:, code:)
 
