@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  Healthcheck.routes(self)
+
   resources :links, only: %i[index create] do
     collection do
       get ':owner_code/:code', to: 'links#show'
