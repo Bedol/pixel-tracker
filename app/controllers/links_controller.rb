@@ -13,7 +13,7 @@ class LinksController < ApplicationController
 
     Open.create(source: 'email', request_ip: request.remote_ip, open_type: :standard, link: @link,
                 user_agent: request.headers['User-Agent'])
-    redirect_to action: :glanced, status: 303
+    redirect_to action: :glanced, status: 303, p: SecureRandom.uuid
   end
 
   def glanced
@@ -23,7 +23,7 @@ class LinksController < ApplicationController
     Open.create(source: 'email', request_ip: request.remote_ip, open_type: :glanced, link: @link,
                 user_agent: request.headers['User-Agent'])
 
-    redirect_to action: :skimmed, status: 303
+    redirect_to action: :skimmed, status: 303, p: SecureRandom.uuid
   end
 
   def skimmed
@@ -33,7 +33,7 @@ class LinksController < ApplicationController
     Open.create(source: 'email', request_ip: request.remote_ip, open_type: :skimmed, link: @link,
                 user_agent: request.headers['User-Agent'])
 
-    redirect_to action: :readed, status: 303
+    redirect_to action: :readed, status: 303, p: SecureRandom.uuid
   end
 
   def readed
